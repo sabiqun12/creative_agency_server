@@ -27,6 +27,7 @@ app.get('/', (req, res) => {
 
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 client.connect(err => {
+    console.log(err)
     const serviceCollection = client.db("creativeAgency").collection("allService");
     const orderCollection = client.db("creativeAgency").collection("order");
     const addServiceCollection = client.db("creativeAgency").collection("addService");
